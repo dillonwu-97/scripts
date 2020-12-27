@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Script source: Wicked Cool Shell Scripts
 # This script gets information about a specific bitcoin address
 # Tools used: curl
 
