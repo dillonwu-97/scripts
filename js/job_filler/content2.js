@@ -4,10 +4,10 @@ const dict = {
 	"last name":"Wu", 
 	"linkedin":'https://www.linkedin.com/in/dillonwu/', 
 	"email":"dillonwu999@gmail.com",
-	"phone":'9178268232',
+	"phone":'redacted',
 	'website':'https://github.com/dillonwu-97/algorithms-visualizer',
 	'github':'https://github.com/dillonwu-97',
-	'location': 'Brooklyn, New York, United States',
+	'location': 'ya mum',
 	'resume': null,
 	'relocate': 'yes'
 
