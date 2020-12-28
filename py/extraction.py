@@ -65,7 +65,7 @@ def main():
 	#Formatting the header
 	header = section.header
 	p = header.paragraphs[0]
-	p.text = 'Dillon Wu \n Emory University - Clairmont MSC 161517; 1762 Clifton Road; Atlanta, GA 30322-1006 \n dillon.wu@emory.edu • (1917) 826 8232'
+	p.text = 'Dillon Wu \n Emory University - Clairmont MSC 161517; 1762 Clifton Road; Atlanta, GA 30322-1006 \n dillon.wu@emory.edu'
 	p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 	section.left_margin = Inches(1)
 	section.right_margin = Inches(1)
