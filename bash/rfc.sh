@@ -3,6 +3,7 @@
 # To run: ./replace_first_occurence.sh
 # TODO: 
 # 1) add flags that permit change of one file or entire directory
+# 2) add recursive directory behavior; currently it only scans the files in a directory as opposed to going into each subdirectory as well
 #########
 
 ######## 
