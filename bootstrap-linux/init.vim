@@ -1,13 +1,3 @@
-call plug#begin( '~/.local/share/nvim/plugged')
-
-" PlugInstall
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'jiangmiao/auto-pairs'
-
-call plug#end()
-
-
 " this creates a mapping between ; and shift+:
 " nnoremap = for normal mode
 " vnoremap = for visual mode
