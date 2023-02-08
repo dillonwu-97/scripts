@@ -37,7 +37,7 @@ ZSH_CMDS=("wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/i
 )
 for cmd in "${ZSH_CMDS[@]}"
 do
-	$cmd
+	sudo -u ${1} bash -c "${cmd}"
 done
 
 
