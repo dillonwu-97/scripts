@@ -10,7 +10,9 @@ sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/ins
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
 # Moving the neovim configuration files to the correct location
+mkdir ~/.config/nvim/
 cp $DIR/init.vim ~/.config/nvim/init.vim
+
 # Moving the tmux configuration files to the correct location
 cp $DIR/tmux.conf ~/.tmux.conf
 
