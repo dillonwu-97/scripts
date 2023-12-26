@@ -1,0 +1,25 @@
+vim.api.nvim_buf_set_option(0, 'modifiable', true)
+vim.g.mapLeader=','
+vim.g.skip_ts_context_commentstring_module=true
+vim.opt.backup=false
+vim.opt.clipboard="unnamedplus"
+vim.opt.cursorline=true
+vim.opt.expandtab=true
+vim.opt.fileencoding="utf-8"
+vim.opt.guifont="monospace:h17"
+vim.opt.hlsearch=true
+vim.opt.ignorecase=true
+vim.opt.incsearch=true
+vim.opt.linebreak=true
+vim.opt.mouse = 'a'
+vim.opt.number=true
+vim.opt.numberwidth=4
+vim.opt.shiftwidth=4
+vim.opt.signcolumn="yes"
+vim.opt.smartcase=true
+vim.opt.smartindent=true
+vim.opt.softtabstop=5
+vim.opt.swapfile=false
+vim.opt.tabstop=4
+vim.opt.termguicolors=true
+vim.opt.wrap=true

@@ -1,0 +1,12 @@
+terminal is vim and shorter hotkey for autocompletion
+These settings but on the browser as well somehow?
+What happens if I run the nvim packages outside of an nvim context, i.e. as a standalone program?
+How to open another file outside of current filesystem from vim
+Do not order by snippet
+Autogenerate comments 
+Reorganize the windows / tabs in nvim
+Add 2x scrolling for each ten scroll downs 
+Add a way to open files by selecting terminal instead of not opening file if it is already open
+    - Not sure what this means
+How to autostart iterm2 terminal in vim automatically
+Move tabs with commands
