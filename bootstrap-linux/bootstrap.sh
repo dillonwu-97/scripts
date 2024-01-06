@@ -5,10 +5,12 @@
 # It requires sudo permissions to run
 # 
 # To run:
+#    chmod u+s bootstrap.sh
 #	./bootstrap.sh
 #############################################
 
-if [ -n "$HOME" ]
+# if length of the $HOME variable is 0
+if [ -z "$HOME" ]
 then
     echo "No home environment variable set"
     exit 1
