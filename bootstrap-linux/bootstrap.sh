@@ -23,30 +23,6 @@ fi
 # Setup
 DIR=$(pwd)
 
-
-cleanup=false
-while getopts 'c' flag; do
-    case "${flag}" in
-        c) cleanup=true ;;
-        *) echo "Unrecognized flag" && exit 1 ;;
-    esac
-done
-
-
-# if we are in debug mode, just remove everything and then rerun the script
-if [[ "$cleanup" = true ]]; then
-    echo "[*] Cleaning up"
-    rm /etc/apt/keyrings/docker.gpg
-    while read -r package; do
-        apt-get remove -y $package
-    done < "$DIR/system-req.txt"
-
-    while read -r package; do
-        python3 -m pip uninstall $package
-    done < "$DIR/python-req.txt"
-fi
-
-
 # Installing docker prerequisites
 # TODO: Maybe I need to check that this actually works as intended, like is there an if-else check that needs to happen here?
 echo "[*] Grabbing docker gpg key"
@@ -60,12 +36,16 @@ echo \
 echo "[*] Installing system packages" 
 apt-get update
 apt-get -y upgrade
+count = 0
 while read -r package; do
+    printf "%s{count}" | tr ' ' "*"
+    echo
     apt-get install -y -f $package || echo "Failed to install $package"
 done < "$DIR/system-req.txt"
 
 # Installing python scripts
 echo "[*] Installing python packages"
+#total=$(wc -l < $DIR/system-req.txt)
 while read -r package; do
     python3 -m pip install $package
 done < "$DIR/python-req.txt"
