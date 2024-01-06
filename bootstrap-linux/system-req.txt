@@ -8,9 +8,6 @@ curl
 diction
 docker-ce
 doxygen
-fcm
-fdm
-fim
 fmtools
 g++
 gnupg
