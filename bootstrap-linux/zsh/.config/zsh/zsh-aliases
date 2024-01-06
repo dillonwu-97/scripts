@@ -7,6 +7,10 @@ alias vim=nvim
 alias python=python3
 alias cdd='cd Desktop'
 alias dk=docker
+alias gc='git commit'
+alias gs='git status'
+alias gp='git push'
+
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
