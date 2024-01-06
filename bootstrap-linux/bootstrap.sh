@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# TODO: Maybe move all of these functions into their own separate file?
+# Install / set up golang and rust as well?
+# Ghidra install 
+
 #############################################
 # This file bootstraps a Linux system so that it has all of the desired packages
 # It requires sudo permissions to run
@@ -32,9 +36,14 @@ done
 # if we are in debug mode, just remove everything and then rerun the script
 if [[ "$cleanup" = true ]]; then
     echo "[*] Cleaning up"
-    rm -y /etc/apt/keyrings/docker.gpg
-    cat $DIR/system-req.txt | xargs aptitude remove -y
-    python3 -m pip uninstall -r $DIR/python-req.txt
+    rm /etc/apt/keyrings/docker.gpg
+    while read -r package; do
+        apt-get remove -y $package
+    done < "$DIR/system-req.txt"
+
+    while read -r package; do
+        python3 -m pip uninstall $package
+    done < "$DIR/python-req.txt"
 fi
 
 
@@ -49,14 +58,17 @@ echo \
 
 # Installing the necessary system packages
 echo "[*] Installing system packages" 
+apt-get update
 apt-get -y upgrade
-apt-get install -y aptitude
-cat $DIR/system-req.txt | xargs aptitude install -y
-
+while read -r package; do
+    apt-get install -y -f $package || echo "Failed to install $package"
+done < "$DIR/system-req.txt"
 
 # Installing python scripts
 echo "[*] Installing python packages"
-python3 -m pip install -r $DIR/python-req.txt
+while read -r package; do
+    python3 -m pip install $package
+done < "$DIR/python-req.txt"
 
 # One more upgrade
 apt-get -y upgrade
