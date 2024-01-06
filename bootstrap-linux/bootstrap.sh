@@ -18,7 +18,22 @@ fi
 
 # Setup
 DIR=$(pwd)
-export ZDOTDIR=$HOME/.config/zsh
+
+
+debug=false
+while getopts 'f' flag; do
+    case "${flag}" in
+        f) debug=true ;;
+        *) error "Unrecognized flag" ;;
+    esac
+done
+
+
+# if we are in debug mode, just remove everything and then rerun the script
+if [[ "$debug" = true ]]; then
+    echo "Debug mode"
+fi
+
 
 # Installing docker prerequisites
 # TODO: Maybe I need to check that this actually works as intended, like is there an if-else check that needs to happen here?
