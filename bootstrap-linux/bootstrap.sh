@@ -5,22 +5,21 @@
 # It requires sudo permissions to run
 # 
 # To run:
-#	./bootstrap.sh $USER
+#	./bootstrap.sh
 #############################################
 
-
-if [ -z "$1" ]
+if [ -n "$HOME" ]
 then
-	echo "No users supplied"
-	exit 1
+    echo "No home environment variable set"
+    exit 1
 fi
 
 # Setup
 DIR=$(pwd)
-BASHRC=~/.bashrc
-ZSHRC=~/.zshrc
+export ZDOTDIR=$HOME/.config/zsh
 
 # Installing docker prerequisites
+# TODO: Maybe I need to check that this actually works as intended, like is there an if-else check that needs to happen here?
 mkdir -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 echo \
@@ -41,3 +40,7 @@ python3 -m pip install -r $DIR/python-req.txt
 
 # One more upgrade
 apt-get -y upgrade
+
+# Setting up the configuration
+cp -r $DIR/nvim/ $HOME/.config/nvim/
+cp -r $DIR/zsh/ $HOME/.config/zsh

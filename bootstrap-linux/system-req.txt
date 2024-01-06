@@ -1,4 +1,3 @@
-ale
 apt-transport-https
 astyle
 binutils
@@ -13,16 +12,14 @@ fcm
 fdm
 fim
 fmtools
+fzf
 g++
-gle-graphics
 gnupg
-le
 libffi-dev
 libpam-pwdfile
 libssl-dev
 lsb-release
 mailutils
-mle-editor
 neovim
 golang
 python3
@@ -36,6 +33,4 @@ tree
 util-linux
 vim
 whois
-zenlisp
-zile
 zsh
