@@ -20,20 +20,20 @@ fi
 DIR=$(pwd)
 
 
-debug=false
-while getopts 'f' flag; do
+cleanup=false
+while getopts 'c' flag; do
     case "${flag}" in
-        f) debug=true ;;
+        c) debug=true ;;
         *) echo "Unrecognized flag" && exit 1 ;;
     esac
 done
 
 
 # if we are in debug mode, just remove everything and then rerun the script
-if [[ "$debug" = true ]]; then
-    echo "Debug mode"
-    rm /etc/apt/keyrings/docker.gpg
-    cat $DIR/system-req.txt | xargs aptitude uninstall -y
+if [[ "$cleanup" = true ]]; then
+    echo "[*] Cleaning up"
+    rm -y /etc/apt/keyrings/docker.gpg
+    cat $DIR/system-req.txt | xargs aptitude remove -y
     python3 -m pip uninstall -r $DIR/python-req.txt
 fi
 
