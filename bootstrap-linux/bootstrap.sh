@@ -23,7 +23,7 @@ DIR=$(pwd)
 cleanup=false
 while getopts 'c' flag; do
     case "${flag}" in
-        c) debug=true ;;
+        c) cleanup=true ;;
         *) echo "Unrecognized flag" && exit 1 ;;
     esac
 done
